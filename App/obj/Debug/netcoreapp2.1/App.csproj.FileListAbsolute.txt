@@ -1,0 +1,13 @@
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\bin\Debug\netcoreapp2.1\App.deps.json
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\bin\Debug\netcoreapp2.1\App.runtimeconfig.json
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\bin\Debug\netcoreapp2.1\App.runtimeconfig.dev.json
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\bin\Debug\netcoreapp2.1\App.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.csproj.CoreCompileInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.RazorAssemblyInfo.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.RazorAssemblyInfo.cs
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.AssemblyInfoInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.AssemblyInfo.cs
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.RazorTargetAssemblyInfo.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\bin\Debug\netcoreapp2.1\App.pdb
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\App\obj\Debug\netcoreapp2.1\App.pdb
