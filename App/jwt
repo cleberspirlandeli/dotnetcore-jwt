@@ -1,0 +1,89 @@
+# JWT Authentication
+
+## Definição do App Secret
+
+```json
+{
+  "AppSettings": {
+    "Secret": "<appsecret>"
+  }
+}
+```
+
+> **Importante:** A chave da aplicação contida em AppSettings deve ter um tamanho mínimo de ... caractéres.
+
+## Configuração
+
+Para configurar a autenticação através de token JWT é necessário adicionar a autenticação a Api no método `ConfigureServices`, contido no arquivo `Startup.cs` para definir a chave de codificação, o esquema de autenticação, entras outras configurações, conforme trecho abaixo.
+
+```csharp
+    var appSettingsSection = configuration.GetSection("AppSettings");
+    services.Configure<AppSettings>(appSettingsSection);
+
+    var appSettings = appSettingsSection.Get<AppSettings>();
+    var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
+    services.AddAuthentication(x =>
+    {
+        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(x =>
+    {
+        x.RequireHttpsMetadata = false;
+        x.SaveToken = true;
+        x.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = false,
+            ValidateAudience = false,
+        };
+    });
+```
+
+No método `Configure` é necessário informar que a aplicação fará uso de autenticação, conforme código abaixo.
+
+```csharp
+    app.UseRouting();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+```
+
+> **Importante:** Os comandos `app.UseAuthentication();` e `app.UseAuthorization();` deve estar após `app.UseRouting();`.
+
+## Geração do token
+
+Para gerar um token, após a validação concluida é possível definir tempo de expiração, tipo de chave e algoritmo de segurança a ser utilizado para criar o token, então o mesmo é retornado para a requisição.
+
+```csharp
+    public async ValueTask<Models.User> Authenticate(string username, string password)
+    {
+        if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Password == password && !u.Deleted) is Models.User user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.Name, user.UserId.ToString()) }),
+                Expires = DateTime.UtcNow.AddMinutes(30),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            user.Token = tokenHandler.WriteToken(token);
+            user.Password = null;
+
+            return user;
+        }
+        return null;
+    }
+```
+
+## Utilização do token
+
+Com o token obtido é possível ter acesso as rotas com autorização adicionando o header
+`Authorization: Bearer [Token]`
+
+https://www.youtube.com/watch?v=udp-zH4NEzE
