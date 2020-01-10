@@ -1,10 +1,7 @@
-﻿using App.Data.Map;
+﻿using App.Data.Domain;
+using App.Data.Map;
 using App.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace App.Data
 {
@@ -16,6 +13,7 @@ namespace App.Data
         }
 
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

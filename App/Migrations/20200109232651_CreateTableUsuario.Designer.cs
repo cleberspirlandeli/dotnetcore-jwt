@@ -4,14 +4,16 @@ using App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App.Migrations
 {
     [DbContext(typeof(ApplicationServiceContext))]
-    partial class ApplicationServiceContextModelSnapshot : ModelSnapshot
+    [Migration("20200109232651_CreateTableUsuario")]
+    partial class CreateTableUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,10 +38,6 @@ namespace App.Migrations
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100);
-
-                    b.Property<string>("Perfil")
-                        .IsRequired()
-                        .HasMaxLength(30);
 
                     b.Property<string>("Senha")
                         .IsRequired()
