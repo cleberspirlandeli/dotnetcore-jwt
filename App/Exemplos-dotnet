@@ -1,3 +1,7 @@
+// Injection Dependences
+services.AddScoped<ProdutoAppService>();
+
+
 private void Validate(ParametroValor parametroValor)
 {
     if (string.IsNullOrEmpty(parametroValor.Descricao))
