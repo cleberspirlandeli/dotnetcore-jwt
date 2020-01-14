@@ -1,0 +1,59 @@
+// Injection Dependences
+services.AddScoped<ProdutoAppService>();
+
+
+private void Validate(ParametroValor parametroValor)
+{
+    if (string.IsNullOrEmpty(parametroValor.Descricao))
+        throw new DomainException(string.Format(CommonMessages.NotNullable, "Descrição"));
+
+    var tiposObjeto = new string[] { "R", "F", "S", "T" };
+    if (!string.IsNullOrEmpty(parametroValor.TipoObjetoAssociado) && !tiposObjeto.Contains(parametroValor.TipoObjetoAssociado))
+        throw new DomainException(string.Format(CommonMessages.InvalidValue, "Tipo de Objeto Associado"));
+
+    var tiposObrigatorio = new string[] { "S", "N" };
+    if (!string.IsNullOrEmpty(parametroValor.Obrigatorio) && !tiposObrigatorio.Contains(parametroValor.Obrigatorio))
+        throw new DomainException(string.Format(CommonMessages.InvalidValue, "Obrigatório"));
+}
+
+
+// Context
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);           
+}
+
+
+// HttpClient
+public static async Task<CaptchaDTO> ReCaptcha(string captcha)
+{
+    var httpClient = new HttpClient();
+    var PK = "123xx123yy123";
+    var uri = "https://www.google.com/recaptcha/api/siteverify";
+    var postData = new List<KeyValuePair<string, string>>();
+    postData.Add(new KeyValuePair<string, string>("secret", PK));
+    postData.Add(new KeyValuePair<string, string>("response", captcha));
+
+    string parameters = "?secret=" + PK + "&response=" + captcha;
+    uri = uri + parameters;
+
+    HttpContent content = new FormUrlEncodedContent(postData);
+
+    string responseFromServer = await httpClient.GetAsync(uri)
+            .ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode())
+            .ContinueWith((readTask) => readTask.Result.Content.ReadAsStringAsync().Result);
+
+    CaptchaDTO captchaDto = new CaptchaDTO();
+
+    captchaDto = Newtonsoft.Json.JsonConvert.DeserializeObject<CaptchaDTO>(responseFromServer);
+
+    return captchaDto;
+}
+
+
+//
+protected void VerifyExists(List<int> ids)
+{
+    if (ids == null || !ids.Any())
+        throw new DomainException(CommonMessages.NenhumRegistroSelecionado);
+}
