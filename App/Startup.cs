@@ -1,4 +1,5 @@
 ﻿using App.Data;
+using App.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,9 @@ namespace App
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BancoDeDados"));
             });
+
+            services.AddScoped<ProdutoService>();
+            services.AddScoped<UsuarioService>();
 
             #region Authorization Bearer
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

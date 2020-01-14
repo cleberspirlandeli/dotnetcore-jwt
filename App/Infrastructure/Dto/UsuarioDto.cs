@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace App.Infrastructure.Dto
+﻿namespace App.Infrastructure.Dto
 {
-    public class TokenAuthenticationDto
+    public class UsuarioDto
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         public string Nome { get; set; }
 
@@ -17,11 +12,10 @@ namespace App.Infrastructure.Dto
 
         public string Senha { get; set; }
 
+        public string Perfil { get; set; }
+
         public int? Ativo { get; set; }
 
         public int? EmailAtivo { get; set; }
-
-        public string Perfil { get; set; }
-
     }
 }

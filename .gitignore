@@ -1,1 +1,3 @@
 .vs
+/App/Infrastructure/Dto/AuthenticationDto.cs
+/App/Controllers/AuthenticationController.cs
