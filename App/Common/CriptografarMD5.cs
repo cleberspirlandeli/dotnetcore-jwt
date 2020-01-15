@@ -5,16 +5,8 @@ using System.Threading.Tasks;
 
 namespace App.Common
 {
-    public class CriptografarMD5
+    public  class CriptografarMD5
     {
-        private readonly string _password;
-
-
-        //public CriptografarMD5(string password)
-        //{
-        //    _password = password;
-        //}
-        
 
         public string Criptografar(string password)
         {

@@ -28,7 +28,7 @@ namespace App.Controllers
         // POST: api/v1/Usuario
         [HttpPost]
         [Allowanonymous]
-        public async Task<IActionResult> Usuario(UsuarioDto dto)
+        public async Task<IActionResult> CreateNewUser(UsuarioDto dto)
         {
 
             if (!ModelState.IsValid)
@@ -36,29 +36,47 @@ namespace App.Controllers
                 return BadRequest();
             }
 
-            var result = await _appService.Insert(dto);
+            var result = await _appService.CreateNewUser(dto);
             
-            return CreatedAtAction("GetByIdUsuario", new { id = result.Id }, result);
+            return Ok(result);
         }
 
-        // GET: api/v1/Produto/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdUsuario([FromRoute] int id)
+        // GET: api/v1/Usuario/5
+        [HttpGet("{idUsuario}")]
+        public async Task<IActionResult> GetUsuarioById([FromRoute] int idUsuario)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            //var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _appService.GetUsuarioById(idUsuario);
 
-            //if (usuario == null)
-            //{
-            //    return NotFound();
-            //}
+            if (usuario == null)
+            {
+                return NotFound();
+            }
 
-            return Ok(id);
+            return Ok(usuario);
         }
 
+        // GET: api/v1/Usuario/5
+        [HttpGet("{idUsuario}")]
+        public async Task<IActionResult> GetUsuarioByEmail([FromBody] string email)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var usuario = await _appService.GetUsuarioByEmail(email);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(usuario);
+        }
     }
 }
