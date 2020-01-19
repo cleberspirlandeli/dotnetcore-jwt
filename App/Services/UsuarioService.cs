@@ -96,20 +96,18 @@ namespace App.Services
             }
         }
 
-        public async void ConfirmEmail(string email, string codigo)
+        public async void ConfirmEmail(string codigo)
         {
             try
             {
                 var user = _context.Usuarios
-                                .Where(x =>
-                                    x.Email == email &&
-                                    x.CodigoGuid == codigo)
+                                .Where(x => x.CodigoGuid == codigo)
                                 .FirstOrDefault();
 
                 if(user == null)
                     throw new Exception("Os dados informados não estão cadastrados no sistema.");
 
-                if(user.Ativo == 0)
+                if (user.Ativo == 0)
                     throw new Exception("Usuário bloqueado.");
 
                 if(user.EmailAtivo == 0)
@@ -695,7 +693,7 @@ namespace App.Services
             #endregion
 
 
-            string url = _configuration["UrlBackend"] + "confirm-email/" + dto.Codigo;
+            string url = _configuration["UrlBackend"] + "usuario/confirm-email?codigo=" + dto.Codigo;
 
             strHtml = strHtml.Replace("#[001]", dto.Nome);
             strHtml = strHtml.Replace("#[002]", url);

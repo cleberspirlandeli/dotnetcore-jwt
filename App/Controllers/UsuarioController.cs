@@ -38,7 +38,26 @@ namespace App.Controllers
 
             var result = await _appService.CreateNewUser(dto);
             
-            return Ok(result);
+            return Ok(new {
+                success = true,
+                id = result.Id,
+                nome = result.Nome,
+                email = result.Email,
+                perfil = result.Perfil
+            });
+        }
+
+        // GET: api/v1/Usuario/confirm-email
+        [HttpGet("confirm-email")]
+        [Allowanonymous]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string codigo)
+        {
+            _appService.ConfirmEmail(codigo);
+
+            return Ok(new
+            {
+                sucess = true
+            });
         }
 
         // GET: api/v1/Usuario/5
@@ -79,13 +98,6 @@ namespace App.Controllers
             return Ok(usuario);
         }
 
-        // GET: api/v1/confirm-email
-        [HttpGet("confirm-email")]
-        public async Task<IActionResult> ConfirmEmail([FromQuery] string email, [FromQuery] string codigo)
-        {
-            _appService.ConfirmEmail(email, codigo);
 
-            return Ok();
-        }
     }
 }
