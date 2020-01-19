@@ -33,5 +33,9 @@ namespace App.Data.Domain
         public int? Ativo { get; set; }
 
         public int? EmailAtivo { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string CodigoGuid { get; set; }
     }
 }

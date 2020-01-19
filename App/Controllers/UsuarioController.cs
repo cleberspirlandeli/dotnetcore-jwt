@@ -78,5 +78,14 @@ namespace App.Controllers
 
             return Ok(usuario);
         }
+
+        // GET: api/v1/confirm-email
+        [HttpGet("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string email, [FromQuery] string codigo)
+        {
+            _appService.ConfirmEmail(email, codigo);
+
+            return Ok();
+        }
     }
 }
