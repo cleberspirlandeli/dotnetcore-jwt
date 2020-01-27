@@ -4482,6 +4482,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "Teste/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.1.0"
+        },
+        "compile": {
+          "bin/placeholder/Teste.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Teste.dll": {}
+        }
       }
     }
   },
@@ -12095,16 +12118,28 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
+    "Teste/1.0.0": {
+      "type": "project",
+      "path": "../Teste/Teste.csproj",
+      "msbuildProject": "../Teste/Teste.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Common >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
-      "System.IdentityModel.Tokens.Jwt >= 5.6.0"
+      "System.IdentityModel.Tokens.Jwt >= 5.6.0",
+      "Teste >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12136,7 +12171,14 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Cleber Spirlandeli\\Desktop\\ESTUDOS\\POS GRADUAÇÃO\\jwt\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Cleber Spirlandeli\\Desktop\\ESTUDOS\\POS GRADUAÇÃO\\jwt\\Common\\Common.csproj"
+            },
+            "C:\\Users\\Cleber Spirlandeli\\Desktop\\ESTUDOS\\POS GRADUAÇÃO\\jwt\\Teste\\Teste.csproj": {
+              "projectPath": "C:\\Users\\Cleber Spirlandeli\\Desktop\\ESTUDOS\\POS GRADUAÇÃO\\jwt\\Teste\\Teste.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

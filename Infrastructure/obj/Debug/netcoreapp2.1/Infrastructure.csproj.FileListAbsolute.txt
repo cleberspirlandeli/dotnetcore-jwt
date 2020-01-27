@@ -1,0 +1,9 @@
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.deps.json
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\bin\Debug\netcoreapp2.1\Infrastructure.pdb
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.AssemblyInfo.cs
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.pdb
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Infrastructure\obj\Debug\netcoreapp2.1\Infrastructure.csprojAssemblyReference.cache

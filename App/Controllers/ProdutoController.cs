@@ -3,6 +3,7 @@ using App.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,7 +26,10 @@ namespace App.Controllers
         [HttpGet]
         public IEnumerable<Produto> GetProdutos()
         {
-            return _context.Produtos;
+            //throw new ApplicationException("TESTE 123");
+            throw new Exception("TESTE 123");
+
+            //return _context.Produtos;
         }
 
         // GET: api/v1/Produto/5

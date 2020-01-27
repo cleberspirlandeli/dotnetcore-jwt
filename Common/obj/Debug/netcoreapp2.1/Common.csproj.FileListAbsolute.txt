@@ -1,0 +1,8 @@
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.cache
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\bin\Debug\netcoreapp2.1\Common.deps.json
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\bin\Debug\netcoreapp2.1\Common.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\bin\Debug\netcoreapp2.1\Common.pdb
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\obj\Debug\netcoreapp2.1\Common.dll
+C:\Users\Cleber Spirlandeli\Desktop\ESTUDOS\POS GRADUAÇÃO\jwt\Common\obj\Debug\netcoreapp2.1\Common.pdb

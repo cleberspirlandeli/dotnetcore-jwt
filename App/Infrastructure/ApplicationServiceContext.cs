@@ -20,6 +20,7 @@ namespace App.Data
         {
             modelBuilder.ApplyConfiguration(new ProdutoMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+
             //modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
     }

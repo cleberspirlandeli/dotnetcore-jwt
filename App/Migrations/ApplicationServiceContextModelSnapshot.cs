@@ -29,7 +29,9 @@ namespace App.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(1);
 
-                    b.Property<string>("CodigoGuid");
+                    b.Property<string>("CodigoGuid")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -104,6 +106,25 @@ namespace App.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Produto");
+                });
+
+            modelBuilder.Entity("App.Infrastructure.Domain.ServerError", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(2000);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServerError");
                 });
 #pragma warning restore 612, 618
         }
